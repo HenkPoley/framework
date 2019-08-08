@@ -2,6 +2,8 @@
 
 namespace Illuminate\Support\Facades;
 
+use Closure;
+
 /**
  * @method static \Illuminate\Database\ConnectionInterface connection(string $name = null)
  * @method static string getDefaultConnection()
