@@ -133,7 +133,7 @@ class ConfigurationUrlParserTest extends TestCase
                     'driver' => 'mysql',
                 ],
             ],
-            'SQL Server DSNs inherited from DATABASE_URL override PHPUnit connection configuration' => [
+            'Microsoft SQL Server DSNs inherited from DATABASE_URL override PHPUnit connection configuration' => [
                 [
                     'driver' => 'sqlite',
                     'database' => ':memory:',
@@ -149,7 +149,7 @@ class ConfigurationUrlParserTest extends TestCase
                     'multi_subnet_failover' => '1',
                 ],
             ],
-            'SQL Server DSN strings are parsed for SQL Server connections' => [
+            'Microsoft SQL Server DSN strings are parsed for Microsoft SQL Server connections' => [
                 [
                     'driver' => 'sqlsrv',
                     'host' => 'fallback-host',
@@ -178,7 +178,7 @@ class ConfigurationUrlParserTest extends TestCase
                     'readonly' => true,
                 ],
             ],
-            'standalone SQL Server DSN strings are parsed' => [
+            'Standalone Microsoft SQL Server DSN strings are parsed' => [
                 'sqlsrv:Database=laravel;Encrypt=false;Server=localhost',
                 [
                     'driver' => 'sqlsrv',
