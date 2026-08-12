@@ -254,6 +254,17 @@ class ConfigurationUrlParserTest extends TestCase
                     'driver' => 'sqlsrv',
                 ],
             ],
+            'SQL Server URL with credentials, port, and database' => [
+                'sqlsrv://username:password@host:1433/database',
+                [
+                    'driver' => 'sqlsrv',
+                    'username' => 'username',
+                    'password' => 'password',
+                    'host' => 'host',
+                    'port' => 1433,
+                    'database' => 'database',
+                ],
+            ],
             'URL with mysql alias driver' => [
                 'mysql://null',
                 [
