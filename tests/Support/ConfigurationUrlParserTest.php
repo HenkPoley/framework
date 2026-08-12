@@ -187,7 +187,7 @@ class ConfigurationUrlParserTest extends TestCase
                     'encrypt' => 'false',
                 ],
             ],
-            'Microsoft SQL Server database URL using Laravel\'s standard format' => [
+            'Microsoft SQL Server database URL using Laravel\'s database URL convention format' => [
                 'sqlsrv://username:password@host:1433/database',
                 [
                     'driver' => 'sqlsrv',
