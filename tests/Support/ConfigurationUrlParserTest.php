@@ -105,11 +105,14 @@ class ConfigurationUrlParserTest extends TestCase
                     'driver' => 'sqlite',
                 ],
             ],
-            'params parsed from URL override individual params' => [
+            'database URL components take precedence over individual configuration values' => [
                 [
                     'url' => 'mysql://foo:bar@localhost/baz',
-                    'password' => 'lulz',
                     'driver' => 'sqlite',
+                    'database' => ':memory:',
+                    'host' => 'fallback-host',
+                    'username' => 'fallback-username',
+                    'password' => 'fallback-password',
                 ],
                 [
                     'username' => 'foo',
@@ -133,8 +136,11 @@ class ConfigurationUrlParserTest extends TestCase
                     'driver' => 'mysql',
                 ],
             ],
-            'query params from URL are used as extra params' => [
-                'mysql://foo:bar@localhost/database?charset=UTF-8',
+            'database URL query options take precedence over individual configuration values' => [
+                [
+                    'url' => 'mysql://foo:bar@localhost/database?charset=UTF-8',
+                    'charset' => 'latin1',
+                ],
                 [
                     'driver' => 'mysql',
                     'database' => 'database',
